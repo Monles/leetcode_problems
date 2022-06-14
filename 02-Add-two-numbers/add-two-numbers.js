@@ -6,6 +6,7 @@ var addTwoNumbers = function (l1, l2) {
   let carry = 0;
   let previousNode = new ListNode();
   const headNode = previousNode;
+
   while (l1 || l2 || carry) {
     let val1 = 0;
     let val2 = 0;
@@ -18,7 +19,7 @@ var addTwoNumbers = function (l1, l2) {
       l2 = l2.next;
     }
     const sum = val1 + val2 + carry;
-    carry = Math.floor(sum / 10);
+    const carry = math.floor(sum / 10);
     const digit = sum % 10;
     const currentNode = new ListNode(digit);
     previousNode.next = currentNode;
