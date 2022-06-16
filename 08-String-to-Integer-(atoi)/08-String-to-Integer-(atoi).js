@@ -4,7 +4,7 @@ const myAtoi = (str) => {
 
   if (isNaN(parsed)) {
     return 0;
-  } else if (parsed >= Math.pow(2, 31)) {
+  } else if (parsed >= Math.pow(2, 31) - 1) {
     return Math.pow(2, 31) - 1;
   } else if (parsed <= Math.pow(-2, 31)) {
     return Math.pow(-2, 31);
