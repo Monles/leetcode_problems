@@ -6,5 +6,7 @@ var removeNthFromEnd = function (head, n) {
     return ++count;
   };
   const count = help(head, 0);
+
   return count === n ? head.next : head;
 };
+console.log(removeNthFromEnd([1, 2, 3, 4, 5], 2));
