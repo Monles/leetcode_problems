@@ -1,24 +1,18 @@
-var lists = [
-  [1, 4, 5],
-  [1, 3, 4],
-  [2, 6],
-];
-var mergeKLists = function (lists) {
-  let numsArr = [];
-  lists.forEach((item) => {
-    while (item && item.val !== null) {
-      numsArr.push(item.val);
-      item = item.next;
+var generateParenthesis = function (n) {
+  let result = [];
+  const generate = (left, right, str) => {
+    if (left === n && right === n) {
+      result.push(str);
+      return;
     }
-  });
-  numsArr = numsArr.sort((a, b) => b - a);
-  let resultNode = null;
-  numsArr.forEach((item) => {
-    let tempNode = new ListNode(item);
-    tempNode.next = resultNode;
-    resultNode = tempNode;
-  });
-  return resultNode;
-};
 
-console.log(mergeKLists(lists));
+    if (left < n) {
+      generate(left + 1, right, `${str}(`);
+    }
+    if (left > right && right < n) {
+      generate(left, right + 1, `${str})`);
+    }
+  };
+  generate(0, 0, "");
+  return result;
+};
