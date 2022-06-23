@@ -28,3 +28,4 @@ var findSubstring = function (s, words) {
   }
   return arr;
 };
+console.log(findSubstring('barfoofoobarthefoobarman', ['bar', 'foo', 'the']));

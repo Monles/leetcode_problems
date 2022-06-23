@@ -12,6 +12,7 @@ var divide = function (dividend, divisor) {
   var count = 1,
     result = 0,
     base = divisor;
+
   while (dividend >= divisor) {
     count = 1;
     base = divisor;
