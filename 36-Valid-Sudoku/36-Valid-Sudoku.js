@@ -6,7 +6,7 @@ var isValidSudoku = function (board) {
       if (cell != '.') {
         let colCell = `cell: ${j} ${cell}`;
         let rowCell = `row: ${i} ${cell}`;
-        let subBoxCell = `subBox: ${parseInt(i / 3)}-${parseInt(
+        let subBoxCell = `subBox: ${parseInt(i / 3)} - ${parseInt(
           j / 3
         )} ${cell}`;
 
@@ -14,7 +14,9 @@ var isValidSudoku = function (board) {
           seen.add(colCell);
           seen.add(rowCell);
           seen.add(subBoxCell);
-        } else return false;
+        } else {
+          return false;
+        }
       }
     }
   }
