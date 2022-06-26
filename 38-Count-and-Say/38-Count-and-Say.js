@@ -22,3 +22,5 @@ var countAndSay = function (n) {
   }
   return curr;
 };
+
+console.log(countAndSay(4));

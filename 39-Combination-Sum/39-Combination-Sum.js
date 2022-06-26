@@ -1,16 +1,16 @@
 function combinationSum(candidates, target) {
-  let res = [];
+  let result = [];
 
   const dfs = (curCandidates, curTarget, value) => {
-    if (curTarget == 0) res.push(value);
+    if (curTarget == 0) result.push(value);
     if (curTarget <= 0) return;
-    for (let g = 0; g < curCandidates.length; g++) {
-      dfs(curCandidates.slice(g), curTarget - curCandidates[g], [
+    for (let i = 0; i < curTarget.length; i++) {
+      dfs(curCandidates.slice(i), curTarget - curCandidates[i], [
         ...value,
-        curCandidates[g],
+        curCandidates[i],
       ]);
     }
   };
   dfs(candidates, target, []);
-  return res;
+  return result;
 }
